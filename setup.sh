@@ -89,13 +89,8 @@ run_ansible()
   fancy_echo "Installing Ansible roles."
   ansible-galaxy install -r requirements.yml
 
-  if [ ! -f ${host_name}.yml ]; then
-    error_echo "Playbook for ${host_name} not found."
-    exit
-  else
-    fancy_echo "Configuring ${host_name}."
-    ansible-playbook default.yml -i 'localhost,' -K
-  fi
+  fancy_echo "Configuring ${host_name}."
+  ansible-playbook default.yml -i 'localhost,' -K
 }
 
 main(){
