@@ -52,12 +52,27 @@ install_ansible()
   fi
 }
     
+clone_repo()
+{
+  local repo="ansible-setup"
+  local repo_zip="https://codeload.github.com/mego22/mac-setup/zip/$repo"
+  curl -fsSL ${repo_zip} | tar -xf- -C ~/
+}
+
+run_ansible()
+{
+  local ansible_dir=mac-setup-master
+  cd ~/${ansible_dir}
+  ansible-galaxy install -r requirements.yml
+  ansible-playbook `hostname`.yml -i 'localhost,' -K
+}
 
 main(){
   check_for_xcode
   install_python
   install_ansible
-#  clone_repo
+  clone_repo
+  run_ansible
 }
 
 main $*
