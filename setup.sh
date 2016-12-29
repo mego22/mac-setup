@@ -71,9 +71,20 @@ run_ansible()
 {
   local repo=$1
   local ansible_dir="mac-setup-${repo}"
+  local host_name=`hostname`
+
   cd ~/${ansible_dir}
+
+  fancy_echo "Installing Ansible roles."
   ansible-galaxy install -r requirements.yml
-  ansible-playbook `hostname`.yml -i 'localhost,' -K
+
+  if [ ! -f ${host_name}.yml ]; then
+    fancy_echo "Playbook for ${host_name} not found."
+    exit
+  else
+    fancy_echo "Configuring ${host_name}."
+    ansible-playbook ${host_name}.yml -i 'localhost,' -K
+  fi
 }
 
 main(){
