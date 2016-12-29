@@ -1,3 +1,6 @@
 ---
 - name: geerlingguy.homebrew
 - name: geerlingguy.mas
+
+- src: https://github.com/mego22/ansible-role-osx-settings.git
+  name: osx-settings
