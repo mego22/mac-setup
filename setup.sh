@@ -4,12 +4,22 @@
 # check for OSX version with: sw_vers -productVersion 
 #
 
-fancy_echo() 
+fancy_echo()
 {
   local fmt="$1"; shift
+  local GREEN='\033[0;32m'
+  local NC='\033[0m' # No Color
 
-  # shellcheck disable=SC2059
-  printf "\n$fmt\n" "$@"
+  printf "\n${GREEN}$fmt${NC}\n" "$@"
+}
+
+error_echo()
+{
+  local fmt="$1"; shift
+  local RED='\033[0;31m'
+  local NC='\033[0m' # No Color
+
+  printf "\n${RED}$fmt${NC}\n" "$@"
 }
 
 check_for_xcode()
@@ -79,7 +89,7 @@ run_ansible()
   ansible-galaxy install -r requirements.yml
 
   if [ ! -f ${host_name}.yml ]; then
-    fancy_echo "Playbook for ${host_name} not found."
+    error_echo "Playbook for ${host_name} not found."
     exit
   else
     fancy_echo "Configuring ${host_name}."
