@@ -1,0 +1,12 @@
+---
+  - hosts: all
+    connection: local
+
+    vars_file:
+      - default-config.yml
+
+    roles:
+    - geerlingguy.homebrew
+    - name: geerlingguy.mas
+      when: mas_installed_app_ids
+    - osx-settings
