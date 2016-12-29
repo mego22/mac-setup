@@ -1,8 +1,9 @@
 #!/bin/bash
-
 # Notes
 # check for OSX version with: sw_vers -productVersion 
 #
+
+set -e
 
 fancy_echo()
 {
@@ -93,7 +94,7 @@ run_ansible()
     exit
   else
     fancy_echo "Configuring ${host_name}."
-    ansible-playbook ${host_name}.yml -i 'localhost,' -K
+    ansible-playbook default.yml -i 'localhost,' -K
   fi
 }
 
