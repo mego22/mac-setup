@@ -1,0 +1,66 @@
+---
+
+homebrew_installed_packages:
+  - autoconf
+  - automake
+  - awscli
+  - curl
+  - emacs
+  - git
+  - go
+  - gpg
+  - htop-osx
+  - iperf
+  - libdvdcss
+  - libevent
+  - jq
+  - keybase
+  - lastpass-cli
+  - packer
+  - pianobar
+  - python
+  - nmap
+  - s3cmd
+  - ssh-copy-id
+  - terraform
+  - terragrunt
+  - tmate
+  - tmux
+  - tree
+  - readline
+  - openssl
+  - wget
+
+homebrew_taps:
+  - homebrew/core
+  - caskroom/cask
+  - homebrew/binary
+  - homebrew/dupes
+  - homebrew/php
+  - homebrew/versions
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - alfred
+  - bartender
+  - chefdk
+  - day-0
+  - dropbox
+  - evernote
+  - firefox
+  - istat-meus
+  - iterm2
+  - java
+  - lastpass
+  - licecap
+  - macvim
+  - seashore
+  - skitch
+  - skype
+  - slack
+  - spotify
+  - transmission
+  - vagrant
+  - virtualbox
+  - viscosity
+  - zoomus
