@@ -44,11 +44,11 @@ homebrew_cask_apps:
   - alfred
   - bartender
   - chefdk
-  - day-0
+  - day-o
   - dropbox
   - evernote
   - firefox
-  - istat-meus
+  - istat-menus
   - iterm2
   - java
   - lastpass
@@ -56,7 +56,6 @@ homebrew_cask_apps:
   - macvim
   - seashore
   - skitch
-  - skype
   - slack
   - spotify
   - transmission
